@@ -45,8 +45,7 @@ class Cabbage:
         sess = tf.compat.v1.Session()
         sess.run(tf.compat.v1.global_variables_initializer())
         for step in range(100000):
-            cost_, hypo_, _ = sess.run([cost, hyposthesis, train],
-                                        feed_dict={X: x_data, Y: y_data})
+            cost_, hypo_, _ = sess.run([cost, hyposthesis, train], feed_dict={X: x_data, Y: y_data})
             if step % 500 == 0:
                 print(f'# {step} 손실비용: {cost_} ')
                 print(f'- 배추가격 : {hypo_[0]}')
@@ -94,7 +93,7 @@ class Cabbage:
             # y = wx + b
             print(dict[0])
         return int(dict[0])
-
+            
 if __name__ == '__main__':
     cabbage= Cabbage()
     # dframe = m.new_model('price_data.csv')
